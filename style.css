@@ -12,22 +12,21 @@ body {
 }
 
 #myChart {
-    width: 100%;
-    max-width: 1200px;
-    height: 350px;
-    max-height: 250px;
+    width: 1500px;
+    max-width: 1500px;
+    height: 400px !important;
+    max-height: 350px;
 }
 
-#myChart1 {
-    width: 100%;
-    max-width: 1200px;
-    height: 250px;
-    max-height: 250px;
+.form-select {
+    width: 80px !important;
 }
 
 .graph {
     display: flex;
     justify-content: center;
+    height: 350px;
+    width: 100%;
 }
 
 .forms {
@@ -100,9 +99,6 @@ input[type="date"]{
     font-weight: 700;
 }
 
-.graph {
-    width: 80%;
-}
 
 @media screen and (max-width: 1000px) {
     .table_list {

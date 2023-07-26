@@ -31,7 +31,13 @@ function alg(){
     var mounth = parseInt(data.split('-')[1], 10);
     var year = parseInt(data.split('-')[0], 10);
 
-    var gender = 3.5;
+    var gender = 0;
+    if ($('.form-select').val() == 'm') {
+        gender += 4;
+    } else {
+        gender += 3.5;
+    }
+    console.log(gender)
     var num_1 = sum(day)+sum(mounth)+sum(year)
     var num_2 = sum(num_1)
     var num_3 = num_1-(2*Number(day.toString()[0]))
@@ -77,7 +83,6 @@ function alg(){
     (matrix[0][0]*x_param[2]**2+matrix[1][1]*x_param[2]+matrix[2][2])*gender, (matrix[0][0]*x_param[3]**2+matrix[1][1]*x_param[3]+matrix[2][2])*gender,
     (matrix[0][0]*x_param[4]**2+matrix[1][1]*x_param[4]+matrix[2][2])*gender, (matrix[0][0]*x_param[5]**2+matrix[1][1]*x_param[5]+matrix[2][2])*gender]
 
-    console.log(family)
     var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -145,13 +150,21 @@ var myChart = new Chart(ctx, {
                 type: 'linear',
                 position: 'bottom',
                 ticks: {
-                    stepSize: 2 // Задаем шаг между метками равным 2
-                  }
+                    stepSize: 1 
+                  },
+                  beginAtZero: true
             },
             y: {
                 type: 'linear',
-                position: 'left'
+                position: 'left',
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 0.2 
+                  },
             }
+        },
+        animation: {
+            duration: 0
         }
     }
 });
