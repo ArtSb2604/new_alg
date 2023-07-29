@@ -148,6 +148,10 @@ input[type="date"]{
         width: 100%;
         flex-direction: column;
     }
+
+    h1 {
+        text-align: center;
+    }
     
 }
 
