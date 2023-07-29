@@ -389,5 +389,26 @@ $('.table').empty();
       <td>${spiritual[5]}</td>
     </tr>
   </tbody>`)
+  
+  $('.btn-warning').css('display', 'block')
 }
 
+function generatePDF() {
+    html2canvas(document.getElementById('body')).then(function(canvas2) {
+        // Создание PDF документа
+        window.jsPDF = window.jspdf.jsPDF
+        var pdfDoc = new jsPDF();
+
+        // Добавление первого графика в PDF
+
+        // Добавление второго графика в PDF
+        var imgData2 = canvas2.toDataURL('image/jpeg', 1.0);
+        pdfDoc.addImage(imgData2, 'JPEG', -20, -2, 250, 150);
+
+        // Сохранение PDF файла
+        pdfDoc.save('charts.pdf');
+    });
+    
+
+    
+}

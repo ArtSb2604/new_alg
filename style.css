@@ -13,7 +13,7 @@ body {
 
 #myChart {
     width: auto;
-    max-width: 95vw;
+    max-width: 80vw;
     height: 400px !important;
     max-height: 350px;
 }
