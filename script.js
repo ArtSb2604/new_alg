@@ -48,6 +48,26 @@ function alg(){
             [count_all[3], count_all[6], count_all[9]]
     ]
 
+    $('.day').text(day)
+    $('.mounth').text(mounth)
+    $('.year').text(year)
+
+    $('.one').text(num_1)
+    $('.two').text(num_2)
+    $('.three').text(num_3)
+    $('.four').text(num_4)
+
+    $('.stroke_1_1').text(count_all[1])
+    $('.stroke_1_2').text(count_all[4])
+    $('.stroke_1_3').text(count_all[7])
+    $('.stroke_2_1').text(count_all[2])
+    $('.stroke_2_2').text(count_all[5])
+    $('.stroke_2_3').text(count_all[8])
+    $('.stroke_3_1').text(count_all[3])
+    $('.stroke_3_2').text(count_all[6])
+    $('.stroke_3_3').text(count_all[9])
+    $('.stroke_3_4').text(count_all[0])
+
     var x_param = [0, 0.5*(matrix[1][0]-1), 0.5*matrix[1][0], 0.5*(matrix[1][0]+1), 0.5*(matrix[1][0]+1)+matrix[0][1], 0.5*(matrix[1][0]+1)+matrix[0][1]+0.125]
 
     var purpose = [(matrix[0][0]*x_param[0]**2+matrix[0][1]*x_param[0]+matrix[0][2])*gender, (matrix[0][0]*x_param[1]**2+matrix[0][1]*x_param[1]+matrix[0][2])*gender, 
@@ -261,7 +281,7 @@ function alg(){
                 position: 'left',
                 beginAtZero: true,
                 ticks: {
-                    stepSize: 0.2 
+                    stepSize: 0.1
                   },
             }
         },
@@ -273,6 +293,101 @@ function alg(){
     }
 });
 
-    return purpose
+
+$('.table').empty();
+    $('.table').append(`<thead>
+    <tr>
+      <th scope="col">ЛИНИЯ</th>
+      <th scope="col">ГРАФИК</th>
+      <th scope="col">Х=0</th>
+      <th scope="col">Хmin=${x_param[1]}</th>
+      <th scope="col">Хmax=${x_param[2]}</th>
+      <th scope="col">ВГ=${x_param[3]}</th>
+      <th scope="col">УР=${x_param[4]}</th>
+      <th scope="col">Lim=${x_param[5]}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ЦЕЛЬ</td>
+      <td>${matrix[0][0]}&sup2+${matrix[0][1]}x+${matrix[0][2]}=Y</td>
+      <td>${purpose[0]}</td>
+      <td>${purpose[1]}</td>
+      <td>${purpose[2]}</td>
+      <td>${purpose[3]}</td>
+      <td>${purpose[4]}</td>
+      <td>${purpose[5]}</td>
+    </tr>
+    <tr>
+      <td>СЕМЬЯ</td>
+      <td>${matrix[1][0]}x&sup2+${matrix[1][1]}x+${matrix[1][2]}=Y</td>
+      <td>${family[0]}</td>
+      <td>${family[1]}</td>
+      <td>${family[2]}</td>
+      <td>${family[3]}</td>
+      <td>${family[4]}</td>
+      <td>${family[5]}</td>
+    </tr>
+    <tr>
+      <td>СТАБИЛЬНОСТЬ</td>
+      <td>${matrix[2][0]}x&sup2+${matrix[2][1]}x+${matrix[2][2]}=Y</td>
+      <td>${stability[0]}</td>
+      <td>${stability[1]}</td>
+      <td>${stability[2]}</td>
+      <td>${stability[3]}</td>
+      <td>${stability[4]}</td>
+      <td>${stability[5]}</td>
+    </tr>
+    <tr>
+      <td>САМООЦЕНКА</td>
+      <td>${matrix[0][0]}x&sup2+${matrix[1][0]}x+${matrix[2][0]}=Y</td>
+      <td>${assessment[0]}</td>
+      <td>${assessment[1]}</td>
+      <td>${assessment[2]}</td>
+      <td>${assessment[3]}</td>
+      <td>${assessment[4]}</td>
+      <td>${assessment[5]}</td>
+    </tr>
+    <tr>
+      <td>БЫТ</td>
+      <td>${matrix[0][1]}x&sup2+${matrix[1][1]}x+${matrix[2][1]}=Y</td>
+      <td>${mol[0]}</td>
+      <td>${mol[1]}</td>
+      <td>${mol[2]}</td>
+      <td>${mol[3]}</td>
+      <td>${mol[4]}</td>
+      <td>${mol[5]}</td>
+    </tr>
+    <tr>
+      <td>ТАЛАНТ</td>
+      <td>${matrix[0][2]}x&sup2+${matrix[1][2]}x+${matrix[2][2]}=Y</td>
+      <td>${talent[0]}</td>
+      <td>${talent[1]}</td>
+      <td>${talent[2]}</td>
+      <td>${talent[3]}</td>
+      <td>${talent[4]}</td>
+      <td>${talent[5]}</td>
+    </tr>
+    <tr>
+      <td>ПЛОТСКАЯ</td>
+      <td>${matrix[2][0]}x&sup2+${matrix[1][1]}x+${matrix[0][2]}=Y</td>
+      <td>${carnal[0]}</td>
+      <td>${carnal[1]}</td>
+      <td>${carnal[2]}</td>
+      <td>${carnal[3]}</td>
+      <td>${carnal[4]}</td>
+      <td>${carnal[5]}</td>
+    </tr>
+    <tr>
+      <td>ДУХОВНАЯ</td>
+      <td>${matrix[0][0]}x&sup2+${matrix[1][1]}x+${matrix[2][2]}=Y</td>
+      <td>${spiritual[0]}</td>
+      <td>${spiritual[1]}</td>
+      <td>${spiritual[2]}</td>
+      <td>${spiritual[3]}</td>
+      <td>${spiritual[4]}</td>
+      <td>${spiritual[5]}</td>
+    </tr>
+  </tbody>`)
 }
 
