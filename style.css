@@ -12,8 +12,8 @@ body {
 }
 
 #myChart {
-    width: 1500px;
-    max-width: 1500px;
+    width: auto;
+    max-width: 95vw;
     height: 400px !important;
     max-height: 350px;
 }
@@ -22,11 +22,20 @@ body {
     width: 80px !important;
 }
 
+.desc {
+    display: flex;
+    gap: 100px;
+}
+
 .graph {
     display: flex;
     justify-content: center;
     height: 350px;
     width: 100%;
+}
+
+.table {
+    width: 700px !important;
 }
 
 .forms {
@@ -95,9 +104,7 @@ input[type="date"]{
     width: 40px;
 }
 
-.info {
-    font-weight: 700;
-}
+
 
 
 @media screen and (max-width: 1000px) {
