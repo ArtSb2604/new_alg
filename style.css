@@ -140,6 +140,14 @@ input[type="date"]{
     .table {
         margin-left: 300px;
     }
+
+    .forms__input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        flex-direction: column;
+    }
     
 }
 
