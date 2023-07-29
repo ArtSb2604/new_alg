@@ -267,7 +267,9 @@ function alg(){
         },
         animation: {
             duration: 0
-        }
+        },
+        maintainAspectRatio: false,
+        aspectRatio: 1,
     }
 });
 
