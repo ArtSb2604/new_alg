@@ -18,6 +18,14 @@ body {
     max-height: 350px;
 }
 
+#pdf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
 .form-select {
     width: 80px !important;
 }

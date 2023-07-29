@@ -25,43 +25,45 @@
             <button class="btn btn-primary" onclick="alg()">Узнать</button>
             <button class="btn btn-warning" style="display: none;" onclick="generatePDF()">Сохранить</button>
         </div>
-    <div class="graph">
-        <canvas id="myChart"></canvas>
-        
-    </div>
-    <div class="desc">
-        <div class="info">
-            <div class="date_r">
-                <p class="day"></p>
-                <p class="mounth"></p>
-                <p class="year"></p>
-            </div>
-            <div class="sum">
-                <p class="one"></p>
-                <p class="two"></p>
-                <p class="three"></p>
-                <p class="four"></p>
-            </div>
-            <div class="matrix">
-                <div class="stroke_1">
-                    <p class="stroke_1_1"></p>
-                    <p class="stroke_1_2"></p>
-                    <p class="stroke_1_3"></p>
-                </div>
-                <div class="stroke_2">
-                    <p class="stroke_2_1"></p>
-                    <p class="stroke_2_2"></p>
-                    <p class="stroke_2_3"></p>
-                </div>
-                <div class="stroke_3">
-                    <p class="stroke_3_1"></p>
-                    <p class="stroke_3_2"></p>
-                    <p class="stroke_3_3"></p>
-                    <p class="stroke_3_4"></p>
-                </div>
-            </div>
+    <div id="pdf">
+        <div class="graph">
+            <canvas id="myChart"></canvas>
+            
         </div>
-        <table class="table"></table>
+        <div class="desc">
+            <div class="info">
+                <div class="date_r">
+                    <p class="day"></p>
+                    <p class="mounth"></p>
+                    <p class="year"></p>
+                </div>
+                <div class="sum">
+                    <p class="one"></p>
+                    <p class="two"></p>
+                    <p class="three"></p>
+                    <p class="four"></p>
+                </div>
+                <div class="matrix">
+                    <div class="stroke_1">
+                        <p class="stroke_1_1"></p>
+                        <p class="stroke_1_2"></p>
+                        <p class="stroke_1_3"></p>
+                    </div>
+                    <div class="stroke_2">
+                        <p class="stroke_2_1"></p>
+                        <p class="stroke_2_2"></p>
+                        <p class="stroke_2_3"></p>
+                    </div>
+                    <div class="stroke_3">
+                        <p class="stroke_3_1"></p>
+                        <p class="stroke_3_2"></p>
+                        <p class="stroke_3_3"></p>
+                        <p class="stroke_3_4"></p>
+                    </div>
+                </div>
+            </div>
+            <table class="table"></table>
+        </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>

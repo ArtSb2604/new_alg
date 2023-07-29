@@ -394,7 +394,7 @@ $('.table').empty();
 }
 
 function generatePDF() {
-    html2canvas(document.getElementById('body')).then(function(canvas2) {
+    html2canvas(document.getElementById('pdf')).then(function(canvas2) {
         // Создание PDF документа
         window.jsPDF = window.jspdf.jsPDF
         var pdfDoc = new jsPDF();
@@ -403,7 +403,7 @@ function generatePDF() {
 
         // Добавление второго графика в PDF
         var imgData2 = canvas2.toDataURL('image/jpeg', 1.0);
-        pdfDoc.addImage(imgData2, 'JPEG', -20, -2, 250, 150);
+        pdfDoc.addImage(imgData2, 'JPEG', -20, 10, 250, 120);
 
         // Сохранение PDF файла
         pdfDoc.save('charts.pdf');
