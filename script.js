@@ -290,7 +290,8 @@ function alg(){
                 position: 'bottom',
                 max: 100,
                 ticks: {
-                    stepSize: 1 
+                  stepSize: 1,
+                  autoSkip: false
                   },
                   beginAtZero: true
             },
@@ -300,6 +301,7 @@ function alg(){
                 beginAtZero: true,
                 ticks: {
                   stepSize: 0.1,
+                  autoSkip: false,
                     callback: function(value) {
                       if (value % 0.25 === 0) {
                           return value;
