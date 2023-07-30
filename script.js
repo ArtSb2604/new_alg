@@ -76,7 +76,12 @@ function alg(){
 
     console.log(x_param[x_param.length-1]*100*1.5+"px")
     $('#myChart').css('height', x_param[x_param.length-1]*100*1.75+"px")
-    $('#myChart').css('min-height', x_param[x_param.length-1]*100*1.75+"px")
+    if (x_param[x_param.length-1]*100*1.5 < 250) {
+      $('#myChart').css('min-height', x_param[x_param.length-1]*100*1.75+"px")
+    } else {
+      $('#myChart').css('min-height', "250px")
+    }
+
     $('#myChart').css('max-height', x_param[x_param.length-1]*100*1.75+"px")
     
 
