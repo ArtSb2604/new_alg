@@ -73,8 +73,7 @@ function alg(){
     for (let i = 1; i <= count_all[4]; i++) { 
         x_param.push(0.5*(matrix[1][0]+1)+i)
     }
-
-    console.log(x_param[x_param.length-1]*100*1.5+"px")
+    
     $('#myChart').css('height', x_param[x_param.length-1]*100*1.75+"px")
     if (x_param[x_param.length-1]*100*1.5 > 300) {
       $('#myChart').css('min-height', x_param[x_param.length-1]*100*1.75+"px")
@@ -127,7 +126,7 @@ function alg(){
     var carnal_new = []
     var spiritual_new = []
 
-    for (let i = x_param[1]; i <= x_param[x_param.length-1]; i+=0.125) {
+    for (let i = x_param[1]; i <= x_param[x_param.length-1]+0.2; i+=0.125) {
         x_param_new.push(i)
     }
 
@@ -168,11 +167,12 @@ function alg(){
             data: data_purpose_new,
             backgroundColor: '#FF0000',
             borderColor: '#FF0000',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == data_purpose_new[1] || dataPoint.x == data_purpose_new[5] || dataPoint.x == data_purpose_new[-2] || dataPoint.x == data_purpose_new[-1]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -184,11 +184,12 @@ function alg(){
             data: data_family_new,
             backgroundColor: '#FFA500',
             borderColor: '#FFA500',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == data_family_new[1] || dataPoint.x == data_family_new[5] || dataPoint.x == data_family_new[-2] || dataPoint.x == data_family_new[-1]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -200,11 +201,12 @@ function alg(){
             data: data_stability_new,
             backgroundColor: '#000000',
             borderColor: '#000000',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == data_stability_new[1] || dataPoint.x == data_stability_new[5] || dataPoint.x == data_stability_new[-2] || dataPoint.x == data_stability_new[-1]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -216,11 +218,12 @@ function alg(){
             data: data_assessment_new,
             backgroundColor: '#008000',
             borderColor: '#008000',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == data_assessment_new[1] || dataPoint.x == data_assessment_new[5] || dataPoint.x == data_assessment_new[-2] || dataPoint.x == data_assessment_new[-1]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -232,11 +235,12 @@ function alg(){
             data: data_mol_new,
             backgroundColor: '#0f93ff',
             borderColor: '#0f93ff',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == mol_new[1] || dataPoint.x == mol_new[5] || dataPoint.x == mol_new[9] || dataPoint.x == mol_new[10]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -248,11 +252,12 @@ function alg(){
             data: data_talent_new,
             backgroundColor: '#8b00ff',
             borderColor: '#8b00ff',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == talent_new[1] || dataPoint.x == talent_new[5] || dataPoint.x == talent_new[9] || dataPoint.x == talent_new[10]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -264,11 +269,12 @@ function alg(){
             data: data_carnal_new,
             backgroundColor: '#9b2d30',
             borderColor: '#9b2d30',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == carnal_new[1] || dataPoint.x == carnal_new[5] || dataPoint.x == carnal_new[9] || dataPoint.x == carnal_new[10]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -280,11 +286,12 @@ function alg(){
             data: data_spiritual_new,
             backgroundColor: '#945d0b',
             borderColor: '#945d0b',
+            borderWidth: 2,
             pointStyle: function(context) {
                 var index = context.dataIndex;
                 var dataPoint = context.dataset.data[index];
     
-                if (dataPoint.x == spiritual_new[1] || dataPoint.x == spiritual_new[5] || dataPoint.x == spiritual_new[9] || dataPoint.x == spiritual_new[10]) {
+                if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
                     return 'circle';
                 } else {
                     return false;
@@ -308,11 +315,12 @@ function alg(){
                 type: 'linear',
                 position: 'left',
                 beginAtZero: true,
+                max: x_param[x_param.length-1]+0.08,
                 ticks: {
                   stepSize: 0.1,
                   autoSkip: false,
                     callback: function(value) {
-                      if (value % 0.25 === 0) {
+                      if (value % 0.25 === 0 || value === x_param[x_param.length-1]) {
                           return value;
                       } else {
                           return '';
