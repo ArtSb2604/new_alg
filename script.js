@@ -288,6 +288,7 @@ function alg(){
             x: {
                 type: 'linear',
                 position: 'bottom',
+                max: 100,
                 ticks: {
                     stepSize: 1 
                   },
@@ -298,7 +299,14 @@ function alg(){
                 position: 'left',
                 beginAtZero: true,
                 ticks: {
-                    stepSize: 0.1
+                  stepSize: 0.1,
+                    callback: function(value) {
+                      if (value % 0.25 === 0) {
+                          return value;
+                      } else {
+                          return '';
+                      }
+                  }
                   },
             }
         },

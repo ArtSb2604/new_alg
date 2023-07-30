@@ -14,8 +14,8 @@ body {
 #myChart {
     width: auto;
     max-width: 80vw;
-    height: 400px !important;
-    max-height: 350px;
+    min-height: 550px;
+    max-height: 550px;
 }
 
 #pdf {
@@ -38,7 +38,6 @@ body {
 .graph {
     display: flex;
     justify-content: center;
-    height: 350px;
     width: 100%;
 }
 
