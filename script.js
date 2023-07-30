@@ -74,6 +74,10 @@ function alg(){
         x_param.push(0.5*(matrix[1][0]+1)+i)
     }
 
+    console.log(x_param[x_param.length-1]*100*1.5+"px")
+    $('#myChart').css('height', x_param[x_param.length-1]*100*1.75+"px")
+    $('#myChart').css('min-height', x_param[x_param.length-1]*100*1.75+"px")
+    $('#myChart').css('max-height', x_param[x_param.length-1]*100*1.75+"px")
     
 
     if (count_all[4] > 0) {
