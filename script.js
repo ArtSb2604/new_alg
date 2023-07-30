@@ -77,11 +77,13 @@ function alg(){
     $('#myChart').css('height', x_param[x_param.length-1]*100*1.75+"px")
     if (x_param[x_param.length-1]*100*1.5 > 300) {
       $('#myChart').css('min-height', x_param[x_param.length-1]*100*1.75+"px")
+      $('#myChart').css('max-height', x_param[x_param.length-1]*100*1.75+"px")
     } else {
       $('#myChart').css('min-height', "300px")
+      $('#myChart').css('max-height', "300px")
     }
 
-    $('#myChart').css('max-height', x_param[x_param.length-1]*100*1.75+"px")
+    
     
 
     if (count_all[4] > 0) {
@@ -157,7 +159,26 @@ function alg(){
     for (let i = 0; i < x_param_new.length; ++i) {data_carnal_new.push({x: carnal_new[i],y: x_param_new[i]})}
     for (let i = 0; i < x_param_new.length; ++i) {data_spiritual_new.push({x: spiritual_new[i],y: x_param_new[i]})}
     
-    console.log(data_family_new)
+    let maxValue = 0;
+
+    let dataset_all = [data_purpose_new, data_family_new, data_stability_new, data_assessment_new,
+      data_mol_new, data_talent_new, data_carnal_new, data_spiritual_new]
+    
+    var maxX = dataset_all[0][0].x; // Предполагаем, что первое значение x - это максимальное
+
+for (var i = 0; i < dataset_all.length; i++) {
+  for (var j = 0; j < dataset_all[i].length; j++) {
+    if (dataset_all[i][j].x > maxX) { // Если текущее значение x больше предполагаемого максимального значения, обновляем maxX
+      if (dataset_all[i][j].x*2 < 100) {
+        maxX = dataset_all[i][j].x*2;
+      } else {
+        maxX = 100;
+      }
+    }
+  }
+}
+
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
     type: 'line',
@@ -304,7 +325,7 @@ function alg(){
             x: {
                 type: 'linear',
                 position: 'bottom',
-                max: 100,
+                max: maxX+1,
                 ticks: {
                   stepSize: 1,
                   autoSkip: false
