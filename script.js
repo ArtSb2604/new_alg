@@ -353,7 +353,7 @@ console.log(maxX)
                    
   {
     label: 'Ось Y',
-    data: [{x: 0, y:0}, {x: 0, y:1000}],
+    data: [{x: -100, y:0}, {x: 0, y:1000}],
     backgroundColor: '#000000',
     borderColor: '#000000',
     borderWidth: 2,
