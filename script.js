@@ -325,7 +325,6 @@ console.log(maxX)
           borderColor: '#000000',
           borderWidth: 1,
           borderDash: [5, 5],
-          pointStyle: false
       },
       {
         label: 'Max',
@@ -334,7 +333,6 @@ console.log(maxX)
         borderColor: '#000000',
         borderWidth: 1,
         borderDash: [5, 5],
-        pointStyle: false
     },
     {
       label: 'ВГ',
@@ -343,7 +341,6 @@ console.log(maxX)
       borderColor: '#000000',
       borderWidth: 1,
       borderDash: [5, 5],
-      pointStyle: false
   },
   {
     label: 'Lim',
@@ -352,7 +349,6 @@ console.log(maxX)
     borderColor: '#000000',
     borderWidth: 1,
     borderDash: [5, 5],
-    pointStyle: false,
 },
       ]
     },
