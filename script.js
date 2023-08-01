@@ -121,7 +121,7 @@ function alg(){
         x_param_new.push(i)
     }
 
-    for (let i = x_param[x_param.length-1]; i <= 10; i+=0.125) {
+    for (let i = x_param[x_param.length-1]; i <= 50; i+=0.125) {
       x_param_new.push(i)
     }
     
@@ -325,7 +325,7 @@ console.log(maxX)
           borderColor: '#000000',
           borderWidth: 1,
           borderDash: [5, 5],
-          pointLabels: false
+          pointStyle: false
       },
       {
         label: 'Max',
@@ -334,7 +334,7 @@ console.log(maxX)
         borderColor: '#000000',
         borderWidth: 1,
         borderDash: [5, 5],
-        pointLabels: false
+        pointStyle: false
     },
     {
       label: 'ВГ',
@@ -343,7 +343,7 @@ console.log(maxX)
       borderColor: '#000000',
       borderWidth: 1,
       borderDash: [5, 5],
-      pointLabels: false
+      pointStyle: false
   },
   {
     label: 'Lim',
@@ -352,7 +352,7 @@ console.log(maxX)
     borderColor: '#000000',
     borderWidth: 1,
     borderDash: [5, 5],
-    pointLabels: false
+    pointStyle: false,
 },
       ]
     },
