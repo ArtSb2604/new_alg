@@ -127,8 +127,8 @@ function alg(){
     
 
     $('#myChart').css('height', (x_param[x_param.length-1]+3)*100*1.7+"px")
-    $('#myChart').css('min-height', "900px")
-    $('#myChart').css('max-height', "900px")
+    $('#myChart').css('min-height', "1000px")
+    $('#myChart').css('max-height', "1000px")
 
     for (const element of x_param_new) { purpose_new.push((matrix[0][0]*element**2+matrix[0][1]*element+matrix[0][2])*gender);}
     for (const element of x_param_new) { family_new.push((matrix[1][0]*element**2+matrix[1][1]*element+matrix[1][2])*gender);}
