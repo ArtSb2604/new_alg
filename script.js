@@ -317,7 +317,44 @@ console.log(maxX)
                     return false;
                 }
             },
-        }]
+        },
+        {
+          label: 'Min',
+          data: [{x: 0, y:x_param[1]}, {x: 1000, y:x_param[1]}],
+          backgroundColor: '#000000',
+          borderColor: '#000000',
+          borderWidth: 1,
+          borderDash: [5, 5],
+          pointLabels: false
+      },
+      {
+        label: 'Max',
+        data: [{x: 0, y:x_param[2]}, {x: 1000, y:x_param[2]}],
+        backgroundColor: '#000000',
+        borderColor: '#000000',
+        borderWidth: 1,
+        borderDash: [5, 5],
+        pointLabels: false
+    },
+    {
+      label: 'ВГ',
+      data: [{x: 0, y:x_param[3]}, {x: 1000, y:x_param[3]}],
+      backgroundColor: '#000000',
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderDash: [5, 5],
+      pointLabels: false
+  },
+  {
+    label: 'Lim',
+    data: [{x: 0, y:x_param[x_param.length-1]}, {x: 1000, y:x_param[x_param.length-1]}],
+    backgroundColor: '#000000',
+    borderColor: '#000000',
+    borderWidth: 1,
+    borderDash: [5, 5],
+    pointLabels: false
+},
+      ]
     },
     options: {
         scales: {
@@ -326,8 +363,17 @@ console.log(maxX)
                 position: 'bottom',
                 max: maxX,
                 ticks: {
+                  maxRotation: 0,
+                  minRotation: 0,
                   stepSize: 1,
-                  autoSkip: false
+                  autoSkip: false,
+                  callback: function(value, index, values) {
+                    if (value%2 != 0) {
+                      return value
+                    } else {
+                      return ''
+                    }
+                  }
                   },
                   beginAtZero: true
             },
@@ -348,10 +394,14 @@ console.log(maxX)
                             if (value == x_param[2]) {
                               return 'Max '+value
                             } else {
-                              if (value == x_param[x_param.length-1]) {
-                                return 'Lim '+value
+                              if (value == x_param[3]) {
+                                return 'ВГ '+value
                               } else {
-                                return value
+                                if (value == x_param[x_param.length-1]) {
+                                  return 'Lim '+value
+                                } else {
+                                  return value
+                                }
                               }
                             }
                           }
@@ -363,10 +413,14 @@ console.log(maxX)
                           if (value == x_param[2]) {
                             return 'Max '+value
                           } else {
-                            if (value == x_param[x_param.length-1]) {
-                              return 'Lim '+value
+                            if (value == x_param[3]) {
+                              return 'ВГ '+value
                             } else {
-                              return ''
+                              if (value == x_param[x_param.length-1]) {
+                                return 'Lim '+value
+                              } else {
+                                return ''
+                              }
                             }
                           }
                         }
@@ -380,6 +434,21 @@ console.log(maxX)
         },
         maintainAspectRatio: false,
         aspectRatio: 1,
+        responsive: false,
+        plugins: {
+          tooltip: {
+              callbacks: {
+                  label: function(context) {
+                      // Проверяем индекс элемента для скрытия метки
+                      if (context.dataIndex === 3) {
+                          return ''; // Пустая строка для скрытия метки
+                      } else {
+                          return context.label;
+                      }
+                  }
+              }
+          }
+      }
     }
 });
 
