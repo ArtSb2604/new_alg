@@ -178,6 +178,12 @@ for (var i = 0; i < dataset_all.length; i++) {
 console.log(maxX)
 
 
+let minNumber = Math.min(...dataset_all.flat());
+
+console.log(minNumber);
+
+
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
     type: 'line',
@@ -361,7 +367,7 @@ console.log(maxX)
 },
                   {
     label: 'Ось X',
-    data: [{x: x_param[1], y:0}, {x: 1000, y:0}],
+    data: [{x: minNumber, y:0}, {x: 1000, y:0}],
     backgroundColor: '#000000',
     borderColor: '#000000',
     borderWidth: 2,
