@@ -359,6 +359,15 @@ console.log(maxX)
     borderWidth: 2,
     
 },
+                  {
+    label: 'Ось X',
+    data: [{x: x_param[1], y:0}, {x: 1000, y:0}],
+    backgroundColor: '#000000',
+    borderColor: '#000000',
+    borderWidth: 2,
+    
+},
+ 
       ]
     },
     options: {
