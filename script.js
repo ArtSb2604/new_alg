@@ -357,6 +357,7 @@ console.log(maxX)
             x: {
                 type: 'linear',
                 position: 'bottom',
+                min: 0
                 max: maxX,
                 ticks: {
                   maxRotation: 0,
