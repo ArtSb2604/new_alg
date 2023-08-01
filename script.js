@@ -350,6 +350,15 @@ console.log(maxX)
     borderWidth: 1,
     borderDash: [5, 5],
 },
+                   
+  {
+    label: 'Ось Y',
+    data: [{x: 0, y:0}, {x: 0, y:1000],
+    backgroundColor: '#000000',
+    borderColor: '#000000',
+    borderWidth: 2,
+    
+},
       ]
     },
     options: {
@@ -357,7 +366,6 @@ console.log(maxX)
             x: {
                 type: 'linear',
                 position: 'bottom',
-                min: 0,
                 max: maxX,
                 ticks: {
                   maxRotation: 0,
