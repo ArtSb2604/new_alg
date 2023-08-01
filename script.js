@@ -74,17 +74,6 @@ function alg(){
         x_param.push(0.5*(matrix[1][0]+1)+i)
     }
     
-    $('#myChart').css('height', x_param[x_param.length-1]*100*1.75+"px")
-    if (x_param[x_param.length-1]*100*1.5 > 300) {
-      $('#myChart').css('min-height', x_param[x_param.length-1]*100*1.75+"px")
-      $('#myChart').css('max-height', x_param[x_param.length-1]*100*1.75+"px")
-    } else {
-      $('#myChart').css('min-height', "300px")
-      $('#myChart').css('max-height', "300px")
-    }
-
-    
-    
 
     if (count_all[4] > 0) {
         x_param.push(0.5*(matrix[1][0]+1)+matrix[0][1]+0.125)
@@ -132,6 +121,15 @@ function alg(){
         x_param_new.push(i)
     }
 
+    for (let i = x_param[x_param.length-1]; i <= 10; i+=0.125) {
+      x_param_new.push(i)
+    }
+    
+
+    $('#myChart').css('height', (x_param[x_param.length-1]+3)*100*1.7+"px")
+    $('#myChart').css('min-height', "900px")
+    $('#myChart').css('max-height', "900px")
+
     for (const element of x_param_new) { purpose_new.push((matrix[0][0]*element**2+matrix[0][1]*element+matrix[0][2])*gender);}
     for (const element of x_param_new) { family_new.push((matrix[1][0]*element**2+matrix[1][1]*element+matrix[1][2])*gender);}
     for (const element of x_param_new) { stability_new.push((matrix[2][0]*element**2+matrix[2][1]*element+matrix[2][2])*gender);}
@@ -161,22 +159,23 @@ function alg(){
     
     let maxValue = 0;
 
-    let dataset_all = [data_purpose_new, data_family_new, data_stability_new, data_assessment_new,
-      data_mol_new, data_talent_new, data_carnal_new, data_spiritual_new]
-    
-    var maxX = dataset_all[0][0].x; // Предполагаем, что первое значение x - это максимальное
+    let dataset_all = [purpose, family, stability, assessment,
+      mol, talent, carnal, spiritual]
+    console.log(dataset_all)
+    var maxX = dataset_all[0][0]; // Предполагаем, что первое значение x - это максимальное
 
 for (var i = 0; i < dataset_all.length; i++) {
   for (var j = 0; j < dataset_all[i].length; j++) {
-    if (dataset_all[i][j].x > maxX) { // Если текущее значение x больше предполагаемого максимального значения, обновляем maxX
-      if (dataset_all[i][j].x*2 < 100) {
-        maxX = dataset_all[i][j].x*2;
+    if (dataset_all[i][j] > maxX) { // Если текущее значение x больше предполагаемого максимального значения, обновляем maxX
+      if (dataset_all[i][j]*2 < 100) {
+        maxX = dataset_all[i][j]*2;
       } else {
         maxX = 100;
       }
     }
   }
 }
+console.log(maxX)
 
 
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -325,7 +324,7 @@ for (var i = 0; i < dataset_all.length; i++) {
             x: {
                 type: 'linear',
                 position: 'bottom',
-                max: maxX+1,
+                max: maxX,
                 ticks: {
                   stepSize: 1,
                   autoSkip: false
@@ -336,7 +335,7 @@ for (var i = 0; i < dataset_all.length; i++) {
                 type: 'linear',
                 position: 'left',
                 beginAtZero: true,
-                max: x_param[x_param.length-1]+0.08,
+                max: x_param[x_param.length-1]*2.5,
                 ticks: {
                   stepSize: 0.1,
                   autoSkip: false,
