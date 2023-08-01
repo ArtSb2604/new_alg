@@ -12,7 +12,7 @@ body {
 }
 
 #myChart {
-    width: auto;
+    width: 100%;
     max-width: 80vw;
     min-height: 550px;
     max-height: 550px;
@@ -166,4 +166,3 @@ input[type="date"]{
     }
     
 }
-
