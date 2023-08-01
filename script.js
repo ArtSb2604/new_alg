@@ -335,15 +335,41 @@ console.log(maxX)
                 type: 'linear',
                 position: 'left',
                 beginAtZero: true,
+                min: x_param[1]-0.5,
                 max: x_param[x_param.length-1]*2.5,
                 ticks: {
-                  stepSize: 0.1,
+                  stepSize: 0.125,
                   autoSkip: false,
                     callback: function(value) {
-                      if (value % 0.25 === 0 || value === x_param[x_param.length-1]) {
-                          return value;
+                      if (value % 0.5 === 0) {
+                          if (value == x_param[1]) {
+                            return 'Min '+value
+                          } else {
+                            if (value == x_param[2]) {
+                              return 'Max '+value
+                            } else {
+                              if (value == x_param[x_param.length-1]) {
+                                return 'Lim '+value
+                              } else {
+                                return value
+                              }
+                            }
+                          }
+                          
                       } else {
-                          return '';
+                        if (value == x_param[1]) {
+                          return 'Min '+value
+                        } else {
+                          if (value == x_param[2]) {
+                            return 'Max '+value
+                          } else {
+                            if (value == x_param[x_param.length-1]) {
+                              return 'Lim '+value
+                            } else {
+                              return ''
+                            }
+                          }
+                        }
                       }
                   }
                   },

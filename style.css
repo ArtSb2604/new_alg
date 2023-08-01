@@ -123,6 +123,18 @@ input[type="date"]{
     .forms {
         height: auto;
     }
+
+    .graph {
+        overflow: auto;
+    overflow-y: hidden;
+    margin: 0 auto;
+    white-space: nowrap;
+    }
+
+    #myChart {
+        width: 1247px;
+        min-width: 1247px;
+    }
 }
 
 @media screen and (max-width: 800px) {
