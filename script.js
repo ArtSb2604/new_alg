@@ -190,199 +190,209 @@ let minNumber = Math.min(...dataset_all.flat());
 
 console.log(minNumber);
 
+var d = [{
+  label: 'ЦЕЛЬ',
+  data: data_purpose_new,
+  backgroundColor: '#FF0000',
+  borderColor: '#FF0000',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+  label: 'СЕМЬЯ',
+  data: data_family_new,
+  backgroundColor: '#FFA500',
+  borderColor: '#FFA500',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+  label: 'СТАБИЛЬНОСТЬ',
+  data: data_stability_new,
+  backgroundColor: '#000000',
+  borderColor: '#000000',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+  label: 'САМООЦЕНКА',
+  data: data_assessment_new,
+  backgroundColor: '#008000',
+  borderColor: '#008000',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+  label: 'БЫТ',
+  data: data_mol_new,
+  backgroundColor: '#0f93ff',
+  borderColor: '#0f93ff',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+  label: 'ТАЛАНТ',
+  data: data_talent_new,
+  backgroundColor: '#8b00ff',
+  borderColor: '#8b00ff',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+  label: 'ПЛОТСКАЯ',
+  data: data_carnal_new,
+  backgroundColor: '#9b2d30',
+  borderColor: '#9b2d30',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+  label: 'ДУХОВНАЯ',
+  data: data_spiritual_new,
+  backgroundColor: '#945d0b',
+  borderColor: '#945d0b',
+  borderWidth: 2,
+  pointStyle: function(context) {
+      var index = context.dataIndex;
+      var dataPoint = context.dataset.data[index];
+
+      if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
+          return 'circle';
+      } else {
+          return false;
+      }
+  },
+},
+{
+label: 'Min',
+data: [{x: 0, y:x_param[1]}, {x: 1000, y:x_param[1]}],
+backgroundColor: '#000000',
+borderColor: '#000000',
+borderWidth: 1,
+borderDash: [5, 5],
+},
+{
+label: 'Max',
+data: [{x: 0, y:x_param[2]}, {x: 1000, y:x_param[2]}],
+backgroundColor: '#000000',
+borderColor: '#000000',
+borderWidth: 1,
+borderDash: [5, 5],
+},
+{
+label: 'ВГ',
+data: [{x: 0, y:x_param[3]}, {x: 1000, y:x_param[3]}],
+backgroundColor: '#000000',
+borderColor: '#000000',
+borderWidth: 1,
+borderDash: [5, 5],
+},
+{
+label: 'Lim',
+data: [{x: 0, y:x_param[x_param.length-1]}, {x: 1000, y:x_param[x_param.length-1]}],
+backgroundColor: '#000000',
+borderColor: '#000000',
+borderWidth: 1,
+borderDash: [5, 5],
+},
+         
+{
+label: 'Ось Y',
+data: [{x: 0, y:-100}, {x: 0, y:1000}],
+backgroundColor: '#000000',
+borderColor: '#000000',
+borderWidth: 2,
+
+},
+{
+label: 'Ось X',
+data: [{x: minNumber, y:0}, {x: 1000, y:0}],
+backgroundColor: '#000000',
+borderColor: '#000000',
+borderWidth: 2,
+
+}]
+
+for (let i = 1; i <= count_all[4]; i+=1) {
+  d.push({
+    label: i+' у.п',
+    data: [{x: minNumber, y:x_param[3]+i}, {x: 1000, y:x_param[3]+i}],
+    backgroundColor: '#000000',
+    borderColor: '#000000',
+    borderWidth: 1,
+borderDash: [5, 5],
+    })
+}
 
 
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
   type: 'line',
   data: {
-      datasets: [{
-          label: 'ЦЕЛЬ',
-          data: data_purpose_new,
-          backgroundColor: '#FF0000',
-          borderColor: '#FF0000',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-          label: 'СЕМЬЯ',
-          data: data_family_new,
-          backgroundColor: '#FFA500',
-          borderColor: '#FFA500',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-          label: 'СТАБИЛЬНОСТЬ',
-          data: data_stability_new,
-          backgroundColor: '#000000',
-          borderColor: '#000000',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-          label: 'САМООЦЕНКА',
-          data: data_assessment_new,
-          backgroundColor: '#008000',
-          borderColor: '#008000',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-          label: 'БЫТ',
-          data: data_mol_new,
-          backgroundColor: '#0f93ff',
-          borderColor: '#0f93ff',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-          label: 'ТАЛАНТ',
-          data: data_talent_new,
-          backgroundColor: '#8b00ff',
-          borderColor: '#8b00ff',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-          label: 'ПЛОТСКАЯ',
-          data: data_carnal_new,
-          backgroundColor: '#9b2d30',
-          borderColor: '#9b2d30',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-          label: 'ДУХОВНАЯ',
-          data: data_spiritual_new,
-          backgroundColor: '#945d0b',
-          borderColor: '#945d0b',
-          borderWidth: 2,
-          pointStyle: function(context) {
-              var index = context.dataIndex;
-              var dataPoint = context.dataset.data[index];
-  
-              if (dataPoint.y == x_param[1] || dataPoint.y == x_param[2] || dataPoint.y == x_param[3] || dataPoint.y == x_param[x_param.length-1]) {
-                  return 'circle';
-              } else {
-                  return false;
-              }
-          },
-      },
-      {
-        label: 'Min',
-        data: [{x: 0, y:x_param[1]}, {x: 1000, y:x_param[1]}],
-        backgroundColor: '#000000',
-        borderColor: '#000000',
-        borderWidth: 1,
-        borderDash: [5, 5],
-    },
-    {
-      label: 'Max',
-      data: [{x: 0, y:x_param[2]}, {x: 1000, y:x_param[2]}],
-      backgroundColor: '#000000',
-      borderColor: '#000000',
-      borderWidth: 1,
-      borderDash: [5, 5],
-  },
-  {
-    label: 'ВГ',
-    data: [{x: 0, y:x_param[3]}, {x: 1000, y:x_param[3]}],
-    backgroundColor: '#000000',
-    borderColor: '#000000',
-    borderWidth: 1,
-    borderDash: [5, 5],
-},
-{
-  label: 'Lim',
-  data: [{x: 0, y:x_param[x_param.length-1]}, {x: 1000, y:x_param[x_param.length-1]}],
-  backgroundColor: '#000000',
-  borderColor: '#000000',
-  borderWidth: 1,
-  borderDash: [5, 5],
-},
-                 
-{
-  label: 'Ось Y',
-  data: [{x: 0, y:-100}, {x: 0, y:1000}],
-  backgroundColor: '#000000',
-  borderColor: '#000000',
-  borderWidth: 2,
-  
-},
-                {
-  label: 'Ось X',
-  data: [{x: minNumber, y:0}, {x: 1000, y:0}],
-  backgroundColor: '#000000',
-  borderColor: '#000000',
-  borderWidth: 2,
-  
-},
-
-    ]
+      datasets: d
   },
   options: {
       scales: {
@@ -428,7 +438,27 @@ console.log(minNumber);
                               if (value == x_param[x_param.length-1]) {
                                 return 'Lim '+value
                               } else {
-                                return value
+                                if (value === x_param[3]+1) {
+                                  return 1+' у.п'
+                                } else {
+                                  if (value === x_param[3]+2) {
+                                    return 2+' у.п'
+                                  } else {
+                                    if (value === x_param[3]+3) {
+                                      return 3+' у.п'
+                                    } else {
+                                      if (value === x_param[3]+4) {
+                                        return 4+' у.п'
+                                      } else {
+                                        if (value === x_param[3]+5) {
+                                          return 5+' у.п'
+                                        } else {
+                                          return value
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
                               }
                             }
                           }
@@ -447,7 +477,27 @@ console.log(minNumber);
                             if (value == x_param[x_param.length-1]) {
                               return 'Lim '+value
                             } else {
-                              return ''
+                              if (value === x_param[3]+1) {
+                                return 1+' у.п'
+                              } else {
+                                if (value === x_param[3]+2) {
+                                  return 2+' у.п'
+                                } else {
+                                  if (value === x_param[3]+3) {
+                                    return 3+' у.п'
+                                  } else {
+                                    if (value === x_param[3]+4) {
+                                      return 4+' у.п'
+                                    } else {
+                                      if (value === x_param[3]+5) {
+                                        return 5+' у.п'
+                                      } else {
+                                        return ''
+                                      }
+                                    }
+                                  }
+                                }
+                              }
                             }
                           }
                         }
