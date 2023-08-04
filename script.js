@@ -747,11 +747,16 @@ var tbody = `<tbody>
 </tr>
 </tbody>`
 
-$('.btn-warning').css('display', 'block')
+
+if ($(window).width() < 800) {
+  $('.mob').css('display', 'block')
+} else {
+  $('.descktop').css('display', 'block')
+}
 }
 
 function generatePDF() {
-  html2canvas(document.getElementById('pdf')).then(function(canvas2) {
+  html2canvas(document.getElementById('body')).then(function(canvas2) {
       // Создание PDF документа
       window.jsPDF = window.jspdf.jsPDF
       var pdfDoc = new jsPDF();
@@ -760,12 +765,26 @@ function generatePDF() {
 
       // Добавление второго графика в PDF
       var imgData2 = canvas2.toDataURL('image/jpeg', 1.0);
-      pdfDoc.addImage(imgData2, 'JPEG', -20, 10, 250, 120);
+      pdfDoc.addImage(imgData2, 'JPEG', -20, -2, 250, 300);
 
       // Сохранение PDF файла
       pdfDoc.save('charts.pdf');
   });
-  
+}
 
-  
+function generatePDF_mob() {
+  $('.graph').css('overflow', 'inherit')
+  var element = document.getElementById("body");
+// Создание опций для экспорта в PDF
+var options = {
+filename: "file_" + Date.now() + ".pdf",
+image: { type: "jpeg", quality: 0.98 },
+html2canvas: { scale: 1.1 },
+jsPDF: { unit: "in", format: "letter", orientation: "landscape" }
+};
+
+html2pdf().set(options).from(element).save();
+setTimeout(function() {
+  $('.graph').css('overflow', 'auto')
+}, 1000);
 }
