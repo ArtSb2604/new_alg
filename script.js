@@ -788,6 +788,5 @@ function generatePDF_mob() {
     // Сохранение PDF файла
     pdfDoc.save('charts.pdf');
     
-  $('.graph').css('overflow', 'auto')
 });
 }
