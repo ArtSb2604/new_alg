@@ -773,7 +773,6 @@ function generatePDF() {
 }
 
 function generatePDF_mob() {
-  $('.graph').css('overflow', 'inherit')
   html2canvas(document.getElementById('pdf')).then(function(canvas2) {
     // Создание PDF документа
     window.jsPDF = window.jspdf.jsPDF
