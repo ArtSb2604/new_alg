@@ -779,7 +779,7 @@ function generatePDF_mob() {
 var options = {
 filename: "file_" + Date.now() + ".pdf",
 image: { type: "jpeg", quality: 0.98 },
-jsPDF: { unit: "in", format: "letter", orientation: "lanscape" },
+jsPDF: { unit: "in", format: "letter", orientation: "landscape" },
 };
 element.style.transform = "scale(" + 0.8 + ")";
 html2pdf().set(options).from(element).save();
