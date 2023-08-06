@@ -756,7 +756,7 @@ if ($(window).width() < 800) {
 }
 
 function generatePDF() {
-  window.open(`http://194.67.65.35:3000/generate-pdf?date=${$('input[type=date]').val()}&site=https://unique-biscotti-fecc9f.netlify.app`);
+  window.open(`http://194.67.65.35:3000/generate-pdf?date=${$('input[type=date]').val()}&site=https://stirring-sorbet-d5cb48.netlify.app`);
 }
 
 function generatePDF_mob() {
