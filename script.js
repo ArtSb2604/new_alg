@@ -756,7 +756,7 @@ if ($(window).width() < 800) {
 }
 
 function generatePDF() {
-  html2canvas(document.getElementById('pdf')).then(function(canvas2) {
+  html2canvas(document.getElementById('body')).then(function(canvas2) {
       // Создание PDF документа
       window.jsPDF = window.jspdf.jsPDF
       var pdfDoc = new jsPDF();
@@ -773,19 +773,18 @@ function generatePDF() {
 }
 
 function generatePDF_mob() {
-  html2canvas(document.getElementById('pdf')).then(function(canvas2) {
-    // Создание PDF документа
-    window.jsPDF = window.jspdf.jsPDF
-    var pdfDoc = new jsPDF();
+  $('.graph').css('overflow', 'inherit')
+  var element = document.getElementById("pdf");
+// Создание опций для экспорта в PDF
+var options = {
+filename: "file_" + Date.now() + ".pdf",
+image: { type: "jpeg", quality: 0.98 },
+jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+};
+element.style.transform = "scale(" + 0.8 + ")";
+html2pdf().set(options).from(element).save();
 
-    // Добавление первого графика в PDF
-
-    // Добавление второго графика в PDF
-    var imgData2 = canvas2.toDataURL('image/jpeg', 1.0);
-    pdfDoc.addImage(imgData2, 'JPEG', -20, -2, 250, 300);
-
-    // Сохранение PDF файла
-    pdfDoc.save('charts.pdf');
-    
-});
 }
+setTimeout(function() {
+  $('.graph').css('overflow', 'auto')
+}, 1000);
