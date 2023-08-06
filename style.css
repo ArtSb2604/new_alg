@@ -125,8 +125,6 @@ input[type="date"]{
     }
 
     .graph {
-        overflow: inherit;
-    overflow-y: hidden;
     margin: 0 auto;
     white-space: nowrap;
     }
