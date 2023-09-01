@@ -758,7 +758,7 @@ if ($(window).width() < 800) {
 }
 
 function generatePDF() {
-  window.open(`http://194.67.65.35:3000/generate-pdf?date=${$('input[type=date]').val()}&gender=${$('.form-select').val()}&site=https://stirring-sorbet-d5cb48.netlify.app`);
+  window.open(`http://134.0.119.88:3000/generate-pdf?date=${$('input[type=date]').val()}&gender=${$('.form-select').val()}&site=https://stirring-sorbet-d5cb48.netlify.app`);
 }
 
 function generatePDF_mob() {
