@@ -1,7 +1,8 @@
 
 
 function sum(num) {
-  let stroke = num.toString();
+  let absoluteNumber = Math.abs(num);
+  let stroke = absoluteNumber.toString();
   let cifr = stroke.split('').map(Number);
   let suma = cifr.reduce((a, b) => a + b, 0);
   return suma;
@@ -41,6 +42,7 @@ function alg(){
   var num_2 = sum(num_1)
   var num_3 = num_1-(2*Number(day.toString()[0]))
   var num_4 = sum(num_3)
+  console.log(sum(-1))
   var count_all = countDigits(day.toString() + mounth.toString() + year.toString() + num_1.toString() + num_2.toString() + num_3.toString() + num_4.toString())
   var matrix = [
           [count_all[1], count_all[4], count_all[7]],
@@ -545,7 +547,7 @@ $('.table').empty();
 <tbody>
 <tr>
   <td>ЦЕЛЬ</td>
-  <td>${matrix[0][0]}&sup2+${matrix[0][1]}x+${matrix[0][2]}=Y</td>
+  <td>${matrix[0][0]}x&sup2+${matrix[0][1]}x+${matrix[0][2]}=Y</td>
   <td>${purpose[0]}</td>
   <td>${purpose[1]}</td>
   <td>${purpose[2]}</td>
@@ -756,7 +758,7 @@ if ($(window).width() < 800) {
 }
 
 function generatePDF() {
-  window.open(`http://134.0.119.88:3000/generate-pdf?date=${$('input[type=date]').val()}&site=https://stirring-sorbet-d5cb48.netlify.app`);
+  window.open(`http://194.67.65.35:3000/generate-pdf?date=${$('input[type=date]').val()}&gender=${$('.form-select').val()}&site=https://stirring-sorbet-d5cb48.netlify.app`);
 }
 
 function generatePDF_mob() {
