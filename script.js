@@ -140,6 +140,7 @@ function alg(){
   var maxY = 7+Math.abs(x_param[1])
   }
 
+  x_param_new.unshift(0)
   for (const element of x_param_new) { purpose_new.push((matrix[0][0]*element**2+matrix[0][1]*element+matrix[0][2])*gender);}
   for (const element of x_param_new) { family_new.push((matrix[1][0]*element**2+matrix[1][1]*element+matrix[1][2])*gender);}
   for (const element of x_param_new) { stability_new.push((matrix[2][0]*element**2+matrix[2][1]*element+matrix[2][2])*gender);}
@@ -158,6 +159,8 @@ function alg(){
   data_carnal_new = []
   data_spiritual_new = []
 
+
+
   for (let i = 0; i < x_param_new.length; ++i) {data_purpose_new.push({x: purpose_new[i],y: x_param_new[i]})}
   for (let i = 0; i < x_param_new.length; ++i) {data_family_new.push({x: family_new[i],y: x_param_new[i]})}
   for (let i = 0; i < x_param_new.length; ++i) {data_stability_new.push({x: stability_new[i],y: x_param_new[i]})}
@@ -166,7 +169,7 @@ function alg(){
   for (let i = 0; i < x_param_new.length; ++i) {data_talent_new.push({x: talent_new[i],y: x_param_new[i]})}
   for (let i = 0; i < x_param_new.length; ++i) {data_carnal_new.push({x: carnal_new[i],y: x_param_new[i]})}
   for (let i = 0; i < x_param_new.length; ++i) {data_spiritual_new.push({x: spiritual_new[i],y: x_param_new[i]})}
-  
+
   let maxValue = 0;
 
   let dataset_all = [purpose, family, stability, assessment,
@@ -185,12 +188,8 @@ for (var j = 0; j < dataset_all[i].length; j++) {
   }
 }
 }
-console.log(maxX)
-
 
 let minNumber = Math.min(...dataset_all.flat());
-
-console.log(minNumber);
 
 var d = [{
   label: 'ЦЕЛЬ',
@@ -389,7 +388,6 @@ borderDash: [5, 5],
     })
 }
 
-
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
   type: 'line',
@@ -421,7 +419,7 @@ borderDash: [5, 5],
               type: 'linear',
               position: 'left',
               beginAtZero: true,
-              min: x_param[1]-0.5,
+              min: x_param[0]-0.5,
               max: maxY,
               ticks: {
                 stepSize: 0.125,
